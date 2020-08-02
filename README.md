@@ -24,7 +24,7 @@ import "github.com/anthony-dong/easy-swagger"
 
 ## 快速开始
 
-[示例代码](./example/main.go)
+[示例代码](./example/test_test.go)
 
 ```go
 func main(){

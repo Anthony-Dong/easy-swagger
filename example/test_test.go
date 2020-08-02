@@ -1,4 +1,4 @@
-package main
+package example
 
 import (
 	"encoding/json"
@@ -6,14 +6,15 @@ import (
 	"github.com/anthony-dong/easy-swagger/swagger"
 	"log"
 	"net/http"
+	"testing"
 	"time"
 )
 
 type UserInfoResponse struct {
-	Id           uint64            `json:"id" desc:"用户ID"`
-	Name         string            `json:"name" desc:"用户名"`
-	Birthday     int64             `json:"birthday" desc:"生日"`
-	Hobbies      []Hobby           `json:"hobbies" desc:"喜爱"`
+	Id       uint64  `json:"id" desc:"用户ID"`
+	Name     string  `json:"name" desc:"用户名"`
+	Birthday int64   `json:"birthday" desc:"生日"`
+	Hobbies  []Hobby `json:"hobbies" desc:"喜爱"`
 }
 type Hobby struct {
 	Name string `json:"name" desc:"名称"`
@@ -23,7 +24,7 @@ type UserInfoRequest struct {
 	Name string `json:"name" desc:"用户名"`
 }
 
-func main() {
+func TestRun(t *testing.T) {
 	// 1、初始化swagger
 	sr := swagger.New(swagger.ApiTitle("rest-api"),
 		swagger.ApiServerAddress("www.google.com.cn"),
